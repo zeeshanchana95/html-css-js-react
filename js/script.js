@@ -1,9 +1,24 @@
-// let h2 = document.getElementsByTagName("h2");
-// h2[0].innerText += " from apna college";
+let div = document.querySelector("div");
+console.log(div);
 
-let divs = document.querySelectorAll(".box");
-console.dir(divs);
+//get attribute value
+let id = div.getAttribute("id");
+console.log(id);
 
-divs.forEach((div) => {
-  div.innerText = "new box";
-});
+let name = div.getAttribute("name");
+console.log(name);
+
+let para = document.querySelector("p");
+console.log(para.getAttribute("para"));
+
+//set attribute
+console.log(para.setAttribute("class", "newClass"));
+
+//applying styles
+div.style.backgroundColor = "green";
+div.style.backgroundColor = "purple";
+div.style.visibility = "hidden";
+
+div.style.fontSize = "26px";
+
+div.innerText = "Hello";
