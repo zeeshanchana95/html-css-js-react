@@ -1,7 +1,7 @@
-.content {
-  color: red;
-}
-
-.newClass {
-  background-color: green;
+div {
+  height: 100px;
+  width: 100px;
+  background-color: dodgerblue;
+  color: white;
+  border: 1px solid black;
 }
