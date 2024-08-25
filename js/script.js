@@ -1,34 +1,18 @@
-let btn1 = document.querySelector("#btn1");
-// btn1.onclick = (evt) => {
-//   console.log(evt);
-//   console.log(evt.type);
-//   console.log(evt.target);
-//   console.log(evt.clientX, evt.clientY);
-// };
+let modeBtn = document.querySelector("#mode");
+let body = document.querySelector("body");
+let currMode = "light";
 
-// let box = document.querySelector("div");
-// box.onmouseover = (evt) => {
-//   console.log(evt);
-//   console.log(evt.type);
-//   console.log(evt.target);
-//   console.log(evt.clientX, evt.clientY);
-// };
-
-btn1.addEventListener("click", (evt) => {
-  console.log("button 1 was clicked - handler 1");
+modeBtn.addEventListener("click", () => {
+  if (currMode === "light") {
+    currMode = "dark";
+    body.classList.add("dark");
+    body.classList.remove("light");
+    // body.style.backgroundColor = "dark";
+  } else {
+    currMode = "light";
+    body.classList.add("light");
+    body.classList.remove("dark");
+    // body.style.backgroundColor = "light";
+  }
+  console.log(currMode);
 });
-
-btn1.addEventListener("click", () => {
-  console.log("button 1 was clicked - handler 2");
-});
-
-const handler3 = () => {
-  console.log("button 1 was clicked - handler 3");
-};
-btn1.addEventListener("click", handler3);
-
-btn1.addEventListener("click", () => {
-  console.log("button 1 was clicked - handler 4");
-});
-
-btn1.removeEventListener("click", handler3);
