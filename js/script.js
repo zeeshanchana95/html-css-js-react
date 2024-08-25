@@ -1,24 +1,20 @@
+let newBtn = document.createElement("button");
+newBtn.innerText = "click me";
+
 let div = document.querySelector("div");
-console.log(div);
+// div.append(newBtn);
+//div.prepend(newBtn);
+div.before(newBtn);
 
-//get attribute value
-let id = div.getAttribute("id");
-console.log(id);
+let p = document.querySelector("p");
+p.after(newBtn);
 
-let name = div.getAttribute("name");
-console.log(name);
+console.log(newBtn.innerText);
+
+let newHeading = document.createElement("h1");
+newHeading.innerHTML = "<i>Hi, I am new!</i>";
+
+document.querySelector("body").prepend(newHeading);
 
 let para = document.querySelector("p");
-console.log(para.getAttribute("para"));
-
-//set attribute
-console.log(para.setAttribute("class", "newClass"));
-
-//applying styles
-div.style.backgroundColor = "green";
-div.style.backgroundColor = "purple";
-div.style.visibility = "hidden";
-
-div.style.fontSize = "26px";
-
-div.innerText = "Hello";
+para.remove();
