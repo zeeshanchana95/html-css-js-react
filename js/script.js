@@ -1,33 +1,22 @@
-let DATA = "secret information";
-class User {
-  constructor(name, email) {
-    this.name = name;
-    this.email = email;
-  }
-  viewData() {
-    console.log("data = ", DATA);
-  }
+//Error Handling
+
+//in js if there is any error occur in the middle of the code, program stop execution at that point. So, we need to handle the error so that our program can continue execution and for this we use Error Handling strategy using try-catch (Exception Handling strategy)
+
+let a = 5;
+let b = 10;
+console.log("a = ", a);
+console.log("b = ", b);
+console.log("a + b = ", a + b);
+try {
+  console.log("a + b = ", a + c); //error
+} catch (err) {
+  console.log(err);
 }
-
-class Admin extends User {
-  constructor(name, email) {
-    super(name, email);
-  }
-
-  editData() {
-    DATA = "some new value";
-  }
-}
-
-let student1 = new User("zeeshan", "zeeshan@gmail.com");
-student1.viewData();
-
-let student2 = new User("ahmed", "ahmed@gmail.com");
-student1.viewData();
-
-let teacher1 = new User("dean", "dean@gmail.com");
-teacher1.viewData();
-
-let admin1 = new Admin("admin", "admin@gmail.com");
-admin1.editData();
-admin1.viewData();
+console.log("a + b = ", a + b);
+console.log("a + b = ", a + b);
+console.log("a + b = ", a + b);
+console.log("a + b = ", a + b);
+console.log("a + b = ", a + b);
+console.log("a + b = ", a + b);
+console.log("a + b = ", a + b);
+console.log("a + b = ", a + b);
