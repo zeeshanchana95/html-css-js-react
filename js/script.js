@@ -1,9 +1,19 @@
-//direct way of creating an object
-const student = {
-  fullName: "Zeeshan Ahmed",
-  marks: 94.4,
-  printMarks: () => {
-    console.log("Marks = ", this.marks);
+const employee = {
+  calcTax() {
+    console.log("tax rate is 10%");
   },
 };
-// this = refere to current object we are using
+
+console.log(employee.calcTax());
+
+const ahmed = {
+  salary: 50000,
+  calcTax() {
+    console.log("tax rate is 20%");
+  },
+};
+
+ahmed.__proto__ = employee;
+
+// prototype __proto__ is a special js property that each js object has which is basically reference of other object
+// *If object & prototype have same method, object's method will be used.
