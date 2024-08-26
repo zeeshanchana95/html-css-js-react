@@ -1,23 +1,19 @@
-class Person {
-  constructor(name) {
-    this.species = "homo sapiens";
+let DATA = "secret information";
+class User {
+  constructor(name, email) {
     this.name = name;
+    this.email = email;
   }
-  eat() {
-    console.log("eact");
-  }
-}
-
-class Engineer extends Person {
-  constructor(name) {
-    super(name);
-  }
-  work() {
-    super.eat();
-    console.log("solve problems, build something");
+  viewData() {
+    console.log("data = ", DATA);
   }
 }
 
-let engObj = new Engineer("zeeshan");
-console.dir(engObj);
-engObj.work();
+let student1 = new User("zeeshan", "zeeshan@gmail.com");
+student1.viewData();
+
+let student2 = new User("ahmed", "ahmed@gmail.com");
+student1.viewData();
+
+let teacher1 = new User("dean", "dean@gmail.com");
+teacher1.viewData();
