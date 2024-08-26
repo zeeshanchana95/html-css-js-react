@@ -1,38 +1,23 @@
 class Person {
   constructor() {
     this.species = "homo sapiens";
+    console.log("enter parent constructor");
   }
   eat() {
     console.log("eact");
   }
-  sleep() {
-    console.log("sleep");
-  }
-
-  work() {
-    console.log("do nothing");
-  }
 }
 
 class Engineer extends Person {
+  constructor(branch) {
+    console.log("enter child constructor");
+    super(); //to invoke parent class constructor
+    this.branch = branch;
+    console.log("exit parent constructor");
+  }
   work() {
     console.log("solve problems, build something");
   }
 }
-class Doctor extends Person {
-  work() {
-    console.log("treat patients");
-  }
-}
 
-let perObj1 = new Person();
-perObj1.work();
-console.dir(perObj1);
-
-let engObj1 = new Engineer();
-console.dir(engObj1);
-engObj1.sleep();
-engObj1.work();
-
-let docObj1 = new Patient();
-docObj1.work();
+let engObj = new Engineer("chemical");
