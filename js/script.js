@@ -1,24 +1,12 @@
-//class is a blueprint for creating objects
+// Inheritance: passing down properties and methods from parent class to child classes
 
-// constructor() is a method in js which is automatically invoked when creating a new object
-
-class ToyotaCar {
-  constructor(brand, milege) {
-    console.log("creating new object");
-    this.brand = brand;
-    this.milege = milege;
-  }
-
-  start() {
-    console.log("start");
-  }
-
-  stop() {
-    console.log("stop");
+class Parent {
+  hello() {
+    console.log("Hello");
   }
 }
 
-let fortuner = new ToyotaCar("fortuner", 10); //constructor invoked
-console.log(fortuner);
-let lexus = new ToyotaCar("lexus", 12); //constructor invoked
-console.log(lexus);
+class Child extends Parent {}
+
+let obj = new Child();
+obj.hello(); //Hello
