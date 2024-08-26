@@ -1,7 +1,7 @@
 class Person {
-  constructor() {
+  constructor(name) {
     this.species = "homo sapiens";
-    console.log("enter parent constructor");
+    this.name = name;
   }
   eat() {
     console.log("eact");
@@ -9,15 +9,15 @@ class Person {
 }
 
 class Engineer extends Person {
-  constructor(branch) {
-    console.log("enter child constructor");
-    super(); //to invoke parent class constructor
-    this.branch = branch;
-    console.log("exit parent constructor");
+  constructor(name) {
+    super(name);
   }
   work() {
+    super.eat();
     console.log("solve problems, build something");
   }
 }
 
-let engObj = new Engineer("chemical");
+let engObj = new Engineer("zeeshan");
+console.dir(engObj);
+engObj.work();
