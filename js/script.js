@@ -1,34 +1,3 @@
-//promises
-//- eventual completion of task is called promise
-//- promise is an object in js which has three states:
-//- pending
-//- resolve
-//- reject
-
-// Example: promise chaining
-// function asynFunction1() {
-//   return new Promise(() => {
-//     setTimeout(() => {
-//       console.log("data 1");
-//     }, 4000);
-//   });
-// }
-
-// function asynFunction2() {
-//   return new Promise(() => {
-//     setTimeout(() => {
-//       console.log("data 2");
-//     }, 4000);
-//   });
-// }
-
-// console.log("fetching data 1");
-// let p1 = asynFunction1().then(() => {
-//   console.log("fetching data 2");
-//   asynFunction2().then((res) => {});
-// });
-
-// creating promise
 function getData(dataId) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
@@ -38,40 +7,53 @@ function getData(dataId) {
   });
 }
 
-// chaining promise
+//async await
+async function getAllData() {
+  console.log("getting data 1");
+  await getData(1);
+  console.log("getting data 2");
+  await getData(2);
+  console.log("getting data 3");
+  await getData(3);
+}
 
-//first way
-// chaining promise
-// getData(1).then((res) => {
-//   console.log(res);
-//   getData(2).then((res) => {
-//     console.log(res);
-//   });
-// });
+// IIFE
+(async function getAllData() {
+  console.log("getting data 1");
+  await getData(1);
+  console.log("getting data 2");
+  await getData(2);
+  console.log("getting data 3");
+  await getData(3);
+})();
 
-// second way
+// promise chaining problem
 getData(1)
   .then((res) => {
+    console.log("getting data 1...");
     return getData(2);
   })
   .then((res) => {
+    console.log("getting data 2...");
     return getData(3);
   })
   .then((res) => {
-    console.log(res);
+    console.log("getting data 3...");
+    return getData(3);
   });
 
 // callback hell problem
-// getData(1, () => {
-//     console.log("getting data 2...");
-//   getData(2, () => {
-//     console.log("getting data 3...");
-//     getData(3, () => {
-//         console.log("getting data 4...");
-//         getData(4);
-//       });
-//   });
-// });
+console.log("getting data 1...");
+getData(1, () => {
+  console.log("getting data 2...");
+  getData(2, () => {
+    console.log("getting data 3...");
+    getData(3, () => {
+      console.log("getting data 4...");
+      getData(4);
+    });
+  });
+});
 
 // console.log("fetching data 1");
 // let p1 = asynFunction1();
